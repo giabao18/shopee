@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" >
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/grid.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
@@ -17,8 +19,8 @@
     <!-- Block Element Modifier -->
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="headr__navbar-list">
                         <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">Vào cửa hàng trên ứng dụng Gia Bảo
                             
@@ -141,7 +143,11 @@
 
                 <!-- Header with search  -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <label for="mobile-search-checkbox" class="header__mobile-search">
+                        <i class="header__mobile-search-icon fas fa-search"></i>
+                    </label>
+                    
+                    <div class="header__logo hide-on-tablet">
                         <a href="/" class="header__logo-link">
                             <svg class="header__logo-img" viewBox="0 0 192 65" >
                                 <g fill-rule="evenodd">
@@ -150,10 +156,12 @@
                                     ></path>
                                 </g>
                             </svg>
-                        </a>
+                        </a> 
                     </div>
 
-                    <div class="header__search">
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
+
+                    <div class="header__search hide-on-mobile">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
                             <!-- Search history -->
@@ -320,12 +328,26 @@
                         </div>
                     </div>
             </div>
+            <div class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item header__sort-item-active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </div>
         </header>
 
-        <div class="app_container">
-            <div class="grid">
-                <div class="grid__row app_content">
-                    <div class="grid_column-2">
+        <div class="app__container">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category__heading">
                                 <i class="category__heading-icon fas fa-list-ul"></i>
@@ -349,8 +371,8 @@
                         </nav>
                     </div>
     
-                    <div class="grid_column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter-label">Sắp xếp theo</span>
                             <button class="btn home-filter-btn btn--primary">Phổ Biến</button>
                             <button class="btn home-filter-btn">Mới Nhất</button>
@@ -386,9 +408,61 @@
                             </div>
                         </div>
 
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <div class="home-product">
-                            <div class="grid__row home-product-item-wrapper">
-                                <!--Product item  --><div class="grid_column-2-5">
+                            <div class="row home-product-item-wrapper">
+                                <!--Product item  --><div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -425,7 +499,7 @@
                                         </div>
                                         
                                     </a>
-                                </div><div class="grid_column-2-5">
+                                </div><div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -462,7 +536,7 @@
                                         </div>
                                         
                                     </a>
-                                </div><div class="grid_column-2-5">
+                                </div><div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -499,7 +573,7 @@
                                         </div>
                                         
                                     </a>
-                                </div><div class="grid_column-2-5">
+                                </div><div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -536,46 +610,7 @@
                                         </div>
                                         
                                     </a>
-                                </div><div class="grid_column-2-5">
-                                    <a class="home-product-item" href="#"> 
-                                        <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
-                                        <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
-                                        <div class="home-product-item__price">
-                                            <span class="home-product-item-price-old">22.000.000đ</span>
-                                            <span class="home-product-item-price-current">20.000.000đ</span>
-                                        </div>
-                                        
-                                        <div class="home-product-item__action">
-                                            <span class="home-product-item__like home-product-item__like-liked">
-                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
-                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
-                                                <!-- <i class="fas fa-heart"></i> -->
-                                            </span>
-                                            <div class="home-product-item-rating">
-                                                <i class="home-product-team-star-gold fas fa-star"></i>
-                                                <i class="home-product-team-star-gold fas fa-star"></i>
-                                                <i class="home-product-team-star-gold fas fa-star"></i>
-                                                <i class="home-product-team-star-gold fas fa-star"></i>
-                                                <i class="home-product-team-star-gold fas fa-star"></i>
-                                            </div>
-                                            <span class="home-product-item-sold">100 đã bán</span>
-                                        </div>
-
-                                        <div class="home-product-item__origin">
-                                            <span class="home-product-item__brand">Apple</span>
-                                            <span class="home-product-item__origin-name">USA</span>
-                                        </div>
-
-                                        <div class="home-product-item__favorite">Yêu Thích</div>
-                                        <div class="home-product-item__sale-off">
-                                            <div class="home-product-item__sale-off-percent">10%</div>
-                                            <div class="home-product-item__sale-off-label">GiẢM</div>
-                                        </div>
-                                        
-                                    </a>
-                                </div>
-
-                                <div class="grid_column-2-5">
+                                </div><div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -613,7 +648,8 @@
                                         
                                     </a>
                                 </div>
-                                <div class="grid_column-2-5">
+
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -651,7 +687,7 @@
                                         
                                     </a>
                                 </div>
-                                <div class="grid_column-2-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -689,7 +725,7 @@
                                         
                                     </a>
                                 </div>
-                                <div class="grid_column-2-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -727,7 +763,7 @@
                                         
                                     </a>
                                 </div>
-                                <div class="grid_column-2-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -765,7 +801,7 @@
                                         
                                     </a>
                                 </div>
-                                <div class="grid_column-2-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -803,7 +839,7 @@
                                         
                                     </a>
                                 </div>
-                                <div class="grid_column-2-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -841,7 +877,7 @@
                                         
                                     </a>
                                 </div>
-                                <div class="grid_column-2-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -879,7 +915,7 @@
                                         
                                     </a>
                                 </div>
-                                <div class="grid_column-2-5">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -917,7 +953,45 @@
                                         
                                     </a>
                                 </div>
-                                <div class="grid_column-2-5">
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a class="home-product-item" href="#"> 
+                                        <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
+                                        <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item-price-old">22.000.000đ</span>
+                                            <span class="home-product-item-price-current">20.000.000đ</span>
+                                        </div>
+                                        
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like-liked">
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <!-- <i class="fas fa-heart"></i> -->
+                                            </span>
+                                            <div class="home-product-item-rating">
+                                                <i class="home-product-team-star-gold fas fa-star"></i>
+                                                <i class="home-product-team-star-gold fas fa-star"></i>
+                                                <i class="home-product-team-star-gold fas fa-star"></i>
+                                                <i class="home-product-team-star-gold fas fa-star"></i>
+                                                <i class="home-product-team-star-gold fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item-sold">100 đã bán</span>
+                                        </div>
+
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Apple</span>
+                                            <span class="home-product-item__origin-name">USA</span>
+                                        </div>
+
+                                        <div class="home-product-item__favorite">Yêu Thích</div>
+                                        <div class="home-product-item__sale-off">
+                                            <div class="home-product-item__sale-off-percent">10%</div>
+                                            <div class="home-product-item__sale-off-label">GiẢM</div>
+                                        </div>
+                                        
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#"> 
                                         <img src="./assets/img/macbook.png" alt="" class="home-product-item__img">
                                         <h4 class="home-product-item__name">Apple MacBook Air (2020) M1 Chip, 13.3-inch, 8GB, 256GB SSD</h4>
@@ -1005,9 +1079,9 @@
         </div>
 
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid_column-2-5">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                         <ul class="footer__list">
                             <li class="footer__item">
@@ -1021,7 +1095,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid_column-2-5">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo Dõi</h3>
                         <ul class="footer__list">
                             <li class="footer__item">
@@ -1044,7 +1118,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid_column-2-5">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Danh mục</h3>
                         <ul class="footer__list">
                             <li class="footer__item">
@@ -1058,7 +1132,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid_column-2-5">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo dõi</h3>
                         <ul class="footer__list">
                             <li class="footer__item">
@@ -1072,7 +1146,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid_column-2-5">
+                    <div class="col l-2-4 m-8 c-6">
                         <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
                         <div class="footer__download">
                             <img src="/shopee/assets/img/qr_code.png" alt="Download QR" class="footer__download-qr">
@@ -1090,7 +1164,7 @@
             </div>
 
             <div class="footer__bottom">
-                <div class="grid">
+                <div class="grid wide">
                     <p class="footer-lisence">2021 - Bản quyền thuộc về Phạm Gia Bảo</p>
                 </div>
             </div>
